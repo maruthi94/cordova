@@ -75,7 +75,6 @@ public class ThumbnailGenerator extends CordovaPlugin {
       fos.close();
     } catch (FileNotFoundException e) {
 
-      Log.d(e.getMessage());
       
     }
     
