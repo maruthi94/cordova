@@ -73,10 +73,11 @@ public class ThumbnailGenerator extends CordovaPlugin {
       thumbnail.compress(Bitmap.CompressFormat.JPEG, 90, fos);
       fos.flush();
       fos.close();
-    } catch (FileNotFoundException e) {
+    } catch (Exception e) {
 
       
     }
+
     
     this.callbackContext.success("file://" + thumbnailFile + "?" + System.currentTimeMillis());
     this.callbackContext = null;
