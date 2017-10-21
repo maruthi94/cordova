@@ -65,7 +65,7 @@ public class ThumbnailGenerator extends CordovaPlugin {
    private void startBitmapping(){
    
     Bitmap thumbnail = ThumbnailUtils.extractThumbnail(BitmapFactory.decodeFile(this.inputUri.getPath()),100,100);
-    File thumbnailFile = new File(this.getTempDirectoryPath() + "/" + System.currentTimeMillis()+ "-thumnail.jpg");
+    File thumbnailFile = new File(getTempDirectoryPath() + "/" + System.currentTimeMillis()+ "-thumnail.jpg");
     FileOutputStream fos = new FileOutputStream(thumbnailFile);
     thumbnail.compress(Bitmap.CompressFormat.JPEG, 90, fos);
     fos.flush();
