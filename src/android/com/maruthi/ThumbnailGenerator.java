@@ -21,11 +21,16 @@ import android.media.ThumbnailUtils;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import java.io.File;
+import java.io.FilterInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import android.util.Log;
 
 import java.util.Date;
 
-public class MyCordovaPlugin extends CordovaPlugin {
+public class ThumbnailGenerator extends CordovaPlugin {
 
   private CallbackContext callbackContext;
   private Uri inputUri;
@@ -59,8 +64,8 @@ public class MyCordovaPlugin extends CordovaPlugin {
    
    private void startBitmapping(){
    
-    Bitmap thumbnail = ThumbnailUtils.extractThumbnail(BitmapFactory(this.inputUri.getPath()),100,100);
-    File thumbnailFile = new File(getTempDirectoryPath() + "/" + System.currentTimeMillis()+ "-thumnail.jpg");
+    Bitmap thumbnail = ThumbnailUtils.extractThumbnail(BitmapFactory.decodeFile(this.inputUri.getPath()),100,100);
+    File thumbnailFile = new File(this.getTempDirectoryPath() + "/" + System.currentTimeMillis()+ "-thumnail.jpg");
     FileOutputStream fos = new FileOutputStream(thumbnailFile);
     thumbnail.compress(Bitmap.CompressFormat.JPEG, 90, fos);
     fos.flush();
