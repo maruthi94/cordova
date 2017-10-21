@@ -1,8 +1,8 @@
 {
-  "name": "cordova-plugin-thumbnail",
-  "version": "1.0.1",
+  "name": "thumbnail-generator",
+  "version": "1.0.0",
   "cordova": {
-    "id": "cordova-plugin-thumbnail",
+    "id": "thumbnail-generator",
     "platforms": [
       "android",
       "ios"
