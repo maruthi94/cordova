@@ -1,6 +1,6 @@
 {
   "name": "thumbnailgenerator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "cordova": {
     "id": "thumbnail-generator",
     "platforms": [

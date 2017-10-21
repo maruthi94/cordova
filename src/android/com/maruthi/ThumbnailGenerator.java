@@ -26,6 +26,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.FileNotFoundException;
 import android.util.Log;
 
 import java.util.Date;
@@ -66,10 +67,18 @@ public class ThumbnailGenerator extends CordovaPlugin {
    
     Bitmap thumbnail = ThumbnailUtils.extractThumbnail(BitmapFactory.decodeFile(this.inputUri.getPath()),100,100);
     File thumbnailFile = new File(getTempDirectoryPath() + "/" + System.currentTimeMillis()+ "-thumnail.jpg");
-    FileOutputStream fos = new FileOutputStream(thumbnailFile);
-    thumbnail.compress(Bitmap.CompressFormat.JPEG, 90, fos);
-    fos.flush();
-    fos.close();
+
+    try {
+      FileOutputStream fos = new FileOutputStream(thumbnailFile);
+      thumbnail.compress(Bitmap.CompressFormat.JPEG, 90, fos);
+      fos.flush();
+      fos.close();
+    } catch (FileNotFoundException e) {
+
+      Log.d(e.getMessage());
+      
+    }
+    
     this.callbackContext.success("file://" + thumbnailFile + "?" + System.currentTimeMillis());
     this.callbackContext = null;
    }
