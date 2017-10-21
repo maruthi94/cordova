@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-    id="my-cordova-plugin"
-    version="1.0.0">
-    <name>Cordova Plugin Template</name>
+    id="my-thumnailgenerator-plugin"
+    version="1.0.1">
+    <name>Android ThumbnailGenerator</name>
     <description></description>
     <license>MIT</license>
     <keywords></keywords>
-    <repo>https://github.com/driftyco/cordova-plugin-template.git</repo>
-    <issue>https://github.com/driftyco/cordova-plugin-template/issues</issue>
+    <repo https://github.com/maruthi94/cordova.git</repo>
+    <issue> https://github.com/maruthi94/cordova.git/issues</issue>
 
     <!-- android -->
     <platform name="android">
