@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-    id="my-thumnailgenerator-plugin"
+    id="cordova-plugin-thumbnail"
     version="1.0.1">
     <name>Android ThumbnailGenerator</name>
     <description></description>
