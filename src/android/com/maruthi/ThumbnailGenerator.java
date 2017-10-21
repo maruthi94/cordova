@@ -33,12 +33,6 @@ public class MyCordovaPlugin extends CordovaPlugin {
   private int targetWidth;
   private int targetHeight;
 
-  public void initialize(CordovaInterface cordova, CordovaWebView webView) {
-    super.initialize(cordova, webView);
-
-    Log.d(TAG, "Initializing MyCordovaPlugin");
-  }
-  
   @Override
   public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
     String imagePath = args.getString(0);
