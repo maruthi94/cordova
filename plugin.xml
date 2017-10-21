@@ -15,7 +15,7 @@
       <js-module src="www/plugin.js" name="plugin">
         <runs/>
 
-        <!-- This is the window variable name you want, like window.ThumbnailGenerator -->
+        <!-- This is the window variable name you want, like window.ThumbnailGenerator yes-->
         <clobbers target="ThumbnailGenerator" />
       </js-module>
       <config-file target="res/xml/config.xml" parent="/*">
