@@ -1,8 +1,8 @@
-#import "MyCordovaPlugin.h"
+#import "ThumbnailGenerator.h"
 
 #import <Cordova/CDVAvailability.h>
 
-@implementation MyCordovaPlugin
+@implementation ThumbnailGenerator
 
 - (void)pluginInitialize {
 }
