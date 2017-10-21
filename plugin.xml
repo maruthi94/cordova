@@ -13,7 +13,7 @@
     <!-- android -->
     <platform name="android">
       <js-module src="www/plugin.js" name="plugin">
-        <runs/>
+        <!-- <runs/> -->
 
         <!-- This is the window variable name you want, like window.ThumbnailGenerator -->
         <clobbers target="ThumbnailGenerator" />
