@@ -6,7 +6,6 @@
     <name>Android ThumbnailGenerator</name>
     <description></description>
     <license>MIT</license>
-    <keywords></keywords>
    
   <engines>
     <engine name="cordova-android" version=">=4.0.0" />
@@ -29,22 +28,6 @@
       </config-file>
 
       <source-file src="src/android/com/maruthi/ThumbnailGenerator.java" target-dir="src/com/maruthi/" />
-    </platform>
-
-    <!-- ios -->
-    <platform name="ios">
-        <js-module src="www/plugin.js" name="plugin">
-            <runs/>
-            <clobbers target="ThumbnailGenerator" />
-        </js-module>
-        <config-file target="config.xml" parent="/*">
-            <feature name="ThumbnailGenerator">
-                <param name="ios-package" value="ThumbnailGenerator" onload="true" />
-            </feature>
-        </config-file>
-
-        <header-file src="src/ios/ThumbnailGenerator.h" />
-        <source-file src="src/ios/ThumbnailGenerator.m" />
     </platform>
 
     <config-file target="AndroidManifest.xml" parent="/manifest">
