@@ -9,6 +9,11 @@
     <keywords></keywords>
     <repo https://github.com/maruthi94/cordova.git></repo>
     <issue> https://github.com/maruthi94/cordova.git/issues</issue>
+   
+  <engines>
+    <engine name="cordova-android" version=">=4.0.0" />
+    <engine name="cordova-ios" version=">=3.5.0" />
+  </engines>
 
     <!-- android -->
     <platform name="android">
