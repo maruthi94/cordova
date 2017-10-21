@@ -37,6 +37,7 @@ public class ThumbnailGenerator extends CordovaPlugin {
   private Uri inputUri;
   private Uri outputUri;
   private int targetWidth;
+  private File outputFile;
   private int targetHeight;
 
   @Override
@@ -47,8 +48,13 @@ public class ThumbnailGenerator extends CordovaPlugin {
     this.targetHeight = options.getInt("targetHeight");
 
     this.inputUri = Uri.parse(imagePath);
+    this.outputFile= new File(getTempDirectoryPath() + "/" + System.currentTimeMillis()+ "-thumnail.jpg");
     this.outputUri = Uri.fromFile(new File(getTempDirectoryPath() + "/" + System.currentTimeMillis()+ "-thumnail.jpg"));
-
+   
+    PluginResult pr = new PluginResult(PluginResult.Status.NO_RESULT);
+    pr.setKeepCallback(true);
+    callbackContext.sendPluginResult(pr);
+    this.callbackContext = callbackContext;
 
     if(action.equals("bitmap")) {
         this.startBitmapping();
@@ -66,7 +72,7 @@ public class ThumbnailGenerator extends CordovaPlugin {
    private void startBitmapping(){
    
     Bitmap thumbnail = ThumbnailUtils.extractThumbnail(BitmapFactory.decodeFile(this.inputUri.getPath()),100,100);
-    File thumbnailFile = new File(this.getTempDirectoryPath() + "/" + System.currentTimeMillis()+ "-thumnail.jpg");
+    File thumbnailFile = this.outputFile;
 
     try {
       FileOutputStream fos = new FileOutputStream(thumbnailFile);
@@ -74,7 +80,11 @@ public class ThumbnailGenerator extends CordovaPlugin {
       fos.flush();
       fos.close();
     } catch (Exception e) {
-
+      JSONObject err = new JSONObject();
+      err.put("message", "error while doing io operation");
+      err.put("code", "io failure");
+      this.callbackContext.error(err);
+      this.callbackContext = null;
       
     }
 
