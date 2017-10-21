@@ -40,6 +40,10 @@ public class ThumbnailGenerator extends CordovaPlugin {
   private File outputFile;
   private int targetHeight;
 
+  public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+    super.initialize(cordova, webView);
+  }
+
   @Override
   public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
     String imagePath = args.getString(0);

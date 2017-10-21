@@ -14,7 +14,7 @@ var PLUGIN_NAME = 'ThumbnailGenerator';
 
 var ThumbnailGenerator = {
   bitmap: function(image,options, cb) {
-    exec(cb, null, PLUGIN_NAME, 'echo', [image,options]);
+    exec(cb, null, PLUGIN_NAME, 'bitmap', [image,options]);
   }
 };
 
